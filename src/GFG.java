@@ -111,7 +111,7 @@ public class GFG {
 
         System.out.println("|--|--|--|");
     }  
-
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         board = new String[9];
