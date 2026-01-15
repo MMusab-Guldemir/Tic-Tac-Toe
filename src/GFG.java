@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.concurrent.BrokenBarrierException;
 
 import javax.naming.directory.InvalidSearchControlsException;
+import javax.net.ssl.TrustManager;
 
 public class GFG {
     
@@ -148,7 +149,32 @@ public class GFG {
             }
 
             /// This hame has two player X And O.
+            /// Here is the logic to decide the turn
+            
+            if (board[numInput - 1].equals(
+                    String.valueOf(numInput))) {
+                board[numInput - 1] = turn;
+
+                if (turn.equals("X")) {
+                    turn = "O";
+                } else {
+                    turn = "X";
+                }
+
+                printBoard();
+                winner = checkWinner(); 
+
+            }
+            else {
+                throw new Exception("Slot already taken; re-enter slot number:");
+            }
+        }
+
+        /// if no one win or lose from both players x and O.
+        /// then here is the logic to print "draw".
         
+        if (winner.equalsIgnoreCase("draw")) {
+            throw new Exception("Congratulations! " + winner + "s have won! Thanks for playing");
         }
 
        }
